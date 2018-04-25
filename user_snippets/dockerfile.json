@@ -40,5 +40,5 @@
       "ENV WORKING_DIR /app",
       "WORKDIR $WORKING_DIR"
     ],
-	},
+  },
 }
