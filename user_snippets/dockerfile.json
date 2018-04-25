@@ -32,6 +32,13 @@
 		"body": [
 		  "RUN wget https://raw.githubusercontent.com/macdougt/bash-examples/master/install_t.bash \\",
 		  "\t && yes | bash ./install_t.bash -u=root"
-		],
+    ],
+  },
+  "workdir": {
+    "prefix": "workdir",
+    "body": [
+      "ENV WORKING_DIR /app",
+      "WORKDIR $WORKING_DIR"
+    ],
 	},
 }
