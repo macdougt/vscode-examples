@@ -1,1 +1,37 @@
-/Users/kimberleyarnold/Library/Application Support/Code/User/snippets/dockerfile.json
+{
+	"pip": {
+		"prefix": "pip",
+		"body": [
+		  "RUN pip install --upgrade pip",
+		],
+		"description": "Pip upgrade"
+	},
+	"apt-get": {
+		"prefix": "apt-get",
+		"body": [
+		  "RUN apt-get update && apt-get install -y \\",
+		  "\tcurl \\",
+		  "\tgit \\",
+		  "\tmlocate \\",
+		  "\ttree \\",
+		  "\twget \\",
+		  "\tvim"
+		],
+		"description": "apt-get"
+	},
+	"apt-get-restrictive": {
+		"prefix": "apt-get-restrictive",
+		"body": [
+		  "RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends \\",
+	    "\t\\${env_var} \\",
+	    "\t&& rm -rf /var/lib/apt/lists/*"
+		],
+  },
+  "installer": {
+		"prefix": "installer",
+		"body": [
+		  "RUN wget https://raw.githubusercontent.com/macdougt/bash-examples/master/install_t.bash \\",
+		  "\t && yes | bash ./install_t.bash -u=root"
+		],
+	},
+}
