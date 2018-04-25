@@ -1,0 +1,306 @@
+{
+  "hash_bang": {
+    "prefix": "#",
+    "body": [
+      "#!/usr/bin/env perl"
+    ],
+    "description": "Hash bang beginning"
+  },
+  "cwd": {
+    "prefix": "CWD",
+    "body": [
+      "",
+      "use Cwd;",
+      "my $cwd = getcwd;",
+      "print \"CWD $cwd\";",
+    ],
+    "description": ""
+  },
+  "DATA": {
+    "prefix": "DATA",
+    "body": [
+      "",
+      "undef $/;",
+      "my $line = <DATA>;",
+      "while ( $line =~ //g) {",
+      "print \"\\n\";",
+      "}",
+      "",
+      "print \"\\n\";",
+      "",
+      "",
+      "__DATA__",
+    ],
+    "description": ""
+  },
+  "dump": {
+    "prefix": "Dump",
+    "body": [
+      " ^",
+      "use Dumpvalue;",
+      "my $dumper = new Dumpvalue;",
+      "$dumper->dumpValue(\\^);",
+    ],
+    "description": ""
+  },
+  "find": {
+    "prefix": "Find",
+    "body": [
+      "",
+      "use File::Find;",
+      "use File::Basename;",
+      "",
+      "find(\\&wanted, @Dirs);",
+      "",
+      "sub wanted {",
+      "my $currentFile = $File::Find::name;",
+      "$currentFile =~ s/\\//\\\\/g;",
+      "my ($base,$path,$type) = fileparse($currentFile);",
+      "",
+      "# Process based on file type",
+      "if ($currentFile =~ /\\.java$/) {",
+      "",
+      "}",
+      "}",
+    ],
+    "description": ""
+  },
+  "forC": {
+    "prefix": "For",
+    "body": [
+      "",
+      "for (EXPR; EXPR; EXPR) {",
+      "",
+      "}",
+    ],
+    "description": ""
+  },
+  "for": {
+    "prefix": "For",
+    "body": [
+      "for $i ( 0 .. $#) {",
+      "}",
+    ],
+    "description": ""
+  },
+  "foreach": {
+    "prefix": "Foreach",
+    "body": [
+      " ARRAY ^",
+      "foreach my $item (@\\^) {",
+      "",
+      "}",
+    ],
+    "description": ""
+  },
+  "foreachkeys": {
+    "prefix": "foreach",
+    "body": [
+      " KEYS",
+      "foreach my $key (sort keys %folders) {",
+      "print \"$key - $folders{$key}\\n\";",
+      "",
+      "\\\\^}",
+    ],
+    "description": ""
+  },
+  "if": {
+    "prefix": "If",
+    "body": [
+      " EXPR ^",
+      "if (\\^) {",
+      "",
+      "}",
+    ],
+    "description": ""
+  },
+  "ifelse": {
+    "prefix": "If",
+    "body": [
+      "-Else EXPR ^",
+      "if (\\^) {",
+      "",
+      "} else {",
+      "",
+      "}",
+    ],
+    "description": ""
+  },
+  "elsif": {
+    "prefix": "If",
+    "body": [
+      "-Elsif EXPR ^",
+      "if (\\^) {",
+      "",
+      "} elsif ( ) {",
+      "",
+      "}",
+    ],
+    "description": ""
+  },
+  "join": {
+    "prefix": "join",
+    "body": [
+      " ^",
+      "join(\"\\n\", @\\^);",
+    ],
+    "description": ""
+  },
+  "last": {
+    "prefix": "Last",
+    "body": [
+      "",
+      "LINE: while (EXPR) {",
+      "last LINE EXPR;",
+      "}",
+    ],
+    "description": ""
+  },
+  "next": {
+    "prefix": "Next",
+    "body": [
+      "",
+      "LINE: while (EXPR) {",
+      "next LINE EXPR;",
+      "}",
+    ],
+    "description": ""
+  },
+  "openpipe": {
+    "prefix": "open",
+    "body": [
+      " PIPE",
+      "open (PIPE, \"$command |\") || die \"Sorry, I couldn't open pipe.\\n\";",
+      "while (<PIPE>) {",
+      "if (//) {",
+      "print \"$1\\n\"; ",
+      "}",
+      "}",
+      "close PIPE;",
+    ],
+    "description": ""
+  },
+  "open": {
+    "prefix": "open",
+    "body": [
+      " read",
+      "open (FILE, \"< $file\") || die \"Sorry, I couldn't read $file.\\n\";",
+    ],
+    "description": ""
+  },
+  "openwrite": {
+    "prefix": "open",
+    "body": [
+      " write",
+      "open (FILE, \"> $file\") || die \"Sorry, I couldn't write $file.\\n\";",
+    ],
+    "description": ""
+  },
+  "pattern": {
+    "prefix": "Pattern",
+    "body": [
+      " EXPR ^",
+      "if ($file =~ /\\^/) {",
+      "}",
+    ],
+    "description": ""
+  },
+  "printjoin": {
+    "prefix": "Print",
+    "body": [
+      " join ^",
+      "print join(\"\\n\",@\\^);",
+      "print \"\\n\";",
+    ],
+    "description": ""
+  },
+  "print": {
+    "prefix": "Println",
+    "body": [
+      " EXPR ^",
+      "print (\"\\^\\n\");",
+    ],
+    "description": ""
+  },
+  "ProcessDir": {
+    "prefix": "ProcessDir",
+    "body": [
+      "opendir(DIR, $dir) or die \"can't opendir $dir: $",
+    ],
+    "description": ""
+  },
+  "push": {
+    "prefix": "push",
+    "body": [
+      "push(@,$);",
+    ],
+    "description": ""
+  },
+  "slurp": {
+    "prefix": "Slurp",
+    "body": [
+      "my \\$file = shift;",
+      "",
+      "if (\\$file !~ /\\w+/) {",
+      "  \\$file = q();",
+      "}",
+      "",
+      "undef $/;",
+      "",
+      "open(FILE, \"< \\$file\") or die \"I cannot open \\$file\\n\";",
+      "\\$content = <FILE>;",
+      "close FILE;",
+      "",
+      "while (\\$content =~ //g) {",
+      "",
+      "}",
+    ],
+    "description": ""
+  },
+  "split": {
+    "prefix": "split",
+    "body": [
+      "split(//,$^);",
+    ],
+    "description": ""
+  },
+  "switch": {
+    "prefix": "Switch",
+    "body": [
+      "SWITCH: {",
+      "EXPR && do { STATEMENT; last SWITCH; };",
+      "EXPR && do { STATEMENT; last SWITCH; };",
+      "EXPR && do { STATEMENT; last SWITCH; };",
+      "ELSESTATEMENT;",
+      "}",
+    ],
+    "description": ""
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while (\\^) {",
+      "",
+      "}",
+    ],
+    "description": ""
+  },
+  "whilefile": {
+    "prefix": "whilefile",
+    "body": [
+      "my \\$file = shift;",
+      "",
+      "if (\\$file !~ /\\w+/) {",
+      "  \\$file = \"\";",
+      "}",
+      "",
+      "open (FILE, \"< \\$file\") || die \"Sorry, I couldn't read \\$file.\\n\";",
+      "while (<FILE>) {",
+      "  if (//) {",
+      "  }",
+      "}",
+      "close FILE;",
+    ],
+    "description": ""
+  },
+}
