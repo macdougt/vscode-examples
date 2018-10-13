@@ -1,0 +1,9 @@
+{
+  "hash_bang": {
+    "prefix": "#",
+    "body": [
+      "#!/usr/bin/env bash"
+    ],
+    "description": "Hash bang beginning"
+  }
+}
