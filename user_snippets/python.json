@@ -1,0 +1,19 @@
+{
+	"main line": {
+    "prefix": "main",
+    "body": [
+      "if __name__ == \"__main__\":",
+			"\tprint(\"Doing the main type thing\")"
+    ],
+    "description": "Main line to execute"
+  },
+	"Load a file": {
+    "prefix": "loadfile",
+    "body": [
+			"filename = \"\"",
+      "with open(filename) as file:",
+			"\tcontent = file.readlines()"
+    ],
+    "description": "Load a file"
+	}
+}
