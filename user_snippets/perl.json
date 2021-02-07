@@ -94,11 +94,9 @@
   "foreachkeys": {
     "prefix": "foreach",
     "body": [
-      " KEYS",
       "foreach my $$key (sort keys %folders) {",
-      "print \"$$key - $$folders{$$key}\\n\";",
-      "",
-      "$1}"
+      "\tprint \"$$key - $$folders$1{$$key}\\n\";",
+      "}"
     ],
     "description": ""
   },
