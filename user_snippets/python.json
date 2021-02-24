@@ -1,5 +1,12 @@
 {
-	"main line": {
+  "hash_bang": {
+    "prefix": "#",
+    "body": [
+      "#!/usr/bin/env python"
+    ],
+    "description": "Hash bang beginning"
+  },
+  "main line": {
     "prefix": "main",
     "body": [
       "if __name__ == \"__main__\":",
