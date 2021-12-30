@@ -1,27 +1,23 @@
 # watcher README
 
-watcher will keep track of events in the text editor
+Watches editor for saves and records them into your VS Code history file (default: <HOME>/.vscode_history). 
 
 ## Features
 
-On save, the user's home directory's .vscode_history file will be updated with the saved file's name.
+Only marks save points with file saved into your history file. It can be used to search files that you have created or modified using VS Code. This is very useful for searching your own work and you can perform analytics on your own usage. Other events can be tracked but watcher currently tracks save points. 
 
-## Requirements
-
-Uses fs and path
+Note: Auto Save can drastically increase the number of entries.  
 
 ## Extension Settings
 
-No settings
+Currently no settings, maybe add the history file name and location as a configurable parameter
 
 ## Known Issues
 
-None yet
+Do not know of any, there is a deprecation warning on Buffer
 
 ## Release Notes
-
-First release
-
 ### 0.0.1
 
 Initial release of watcher
+
