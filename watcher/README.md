@@ -20,4 +20,4 @@ Do not know of any, there is a deprecation warning on Buffer
 ### 0.0.1
 
 Initial release of watcher
-
+Use vsce package to package locally
